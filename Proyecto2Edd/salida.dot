@@ -1,11 +1,13 @@
 digraph ArbolB{
 
 node[shape=record];
-Nodo779237240[label="<P0>|10831-Usuario|<P1>"];
-Nodo25761027[label="<P0>|10763-Usuario|<P1>|10765-Usuario|<P2>|10768-Usuario|<P3>|10770-Usuario|<P4>|10830-Usuario|<P5>"];
-Nodo779237240:P0 -> Nodo25761027;
-Nodo319813103[label="<P0>|10838-Usuario|<P1>|10839-Usuario|<P2>|10907-Usuario|<P3>|10910-Usuario|<P4>|10912-Usuario|<P5>|10916-Usuario|<P6>"];
-Nodo779237240:P1 -> Nodo319813103;
+Nodo468720212[label="<P0>|10786-TituloLa idea del hombre|<P1>|10848-TituloHistoria de la provincia de San Vicente de Chiapa y Guatemala de la orden de Predicadores|<P2>"];
+Nodo1167923893[label="<P0>|10772-TituloLas Ventas en el mundo actual|<P1>|10773-TituloProcesamiento de carnes y embutidos; elaboración, estandarización, control de calidad|<P2>|10774-TituloOptimización de rendimiento y aseguramiento de inocuidad en la industria de quesería; una guía para la pequeña y mediana empresa|<P3>|10775-TituloProducción higiénica de la leche cruda; una guía para la pequeña y mediana empresa|<P4>|10783-TituloMoral para intelectuales|<P5>"];
+Nodo468720212:P0 -> Nodo1167923893;
+Nodo671210404[label="<P0>|10840-TituloConstitución pastoral Gaudium et spes, sobre la Iglesia en el mundo actual|<P1>|10842-TituloIntroducción a la ética|<P2>|10844-TituloEl ocaso de un régimen|<P3>|10846-TituloEducación política nacional|<P4>|10847-TituloDe hombres sociales y movimientos políticos / C. Wright Mills.|<P5>"];
+Nodo468720212:P1 -> Nodo671210404;
+Nodo1564739016[label="<P0>|10927-TituloEvaluación de impacto en formación empresarial ; el caso FUNDES|<P1>|10928-TituloCómo resolver el problema de falta de tiempo|<P2>|10930-TituloPsicología aplicada a la enseñanza|<P3>|10932-TituloPan Am: an airline and its aircraft|<P4>|10933-TituloLa Mujer de pelo largo / Leonor Paz y Paz G.|<P5>|10934-TituloEl libro de la piedad y de la muerte|<P6>"];
+Nodo468720212:P2 -> Nodo1564739016;
 
 
 }

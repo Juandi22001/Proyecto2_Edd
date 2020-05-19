@@ -3,16 +3,16 @@ digraph G{
 		   subgraph cluster_0 { 
 			color = 	azure2;
 	node[shape=Msquare  color = darkslategray text=white gradientangle=90];
-Nodo1690735058[label = "  Ricardo-201503476"];
-Nodo1690735058[label = "  Ricardo-201503476"];
-Nodo1690735058->Nodo1172781349
-Nodo1172781349[label = "  Juanito-201503476"];
-Nodo1172781349->Nodo442442685
-Nodo442442685[label = "  Lucas-201503476"];
-Nodo385416422[label = "  Juanito-201503477"];
-Nodo1180743658[label = "  Juan-201807335"];
-Nodo1180743658[label = "  Juan-201807335"];
-Nodo1180743658->Nodo984780818
-Nodo984780818[label = "  Amilcar-201807335"];
-Nodo1502813746[label = "  Antonio-202005878"];
+Nodo1998198785[label = "  Ricardo-201503476"];
+Nodo1998198785[label = "  Ricardo-201503476"];
+Nodo1998198785->Nodo1540141409
+Nodo1540141409[label = "  Juanito-201503476"];
+Nodo1540141409->Nodo1873593776
+Nodo1873593776[label = "  Lucas-201503476"];
+Nodo498263732[label = "  Juanito-201503477"];
+Nodo986660627[label = "  Juan-201807335"];
+Nodo986660627[label = "  Juan-201807335"];
+Nodo986660627->Nodo70698642
+Nodo70698642[label = "  Amilcar-201807335"];
+Nodo230560481[label = "  Antonio-202005878"];
 }}

@@ -32,7 +32,9 @@ public class Nodo {
         b.append("[label=\"<P0>");
         for( int i = 0; i < mB; i++ ) {
             
-            b.append( "|" +  mLlaves[i].getKey().toString() + "-"+"Usuario");
+            
+            b.append( "|" +  mLlaves[i].getKey().toString() + "-"+"Titulo"+
+            Listas.listaAux.Buscar((int) mLlaves[i].getKey()).getTitulo());
 
             b.append( "|<P" + (i+1) + ">" );                
         }

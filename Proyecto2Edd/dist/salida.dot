@@ -1,7 +1,13 @@
 digraph ArbolB{
 
 node[shape=record];
-Nodo15257107[label="<P0>|2-UsuariojTextField10|<P1>"];
+Nodo26694984[label="<P0>|10786-TituloLa idea del hombre|<P1>|10848-TituloHistoria de la provincia de San Vicente de Chiapa y Guatemala de la orden de Predicadores|<P2>"];
+Nodo2935151[label="<P0>|10772-TituloLas Ventas en el mundo actual|<P1>|10773-TituloProcesamiento de carnes y embutidos; elaboración, estandarización, control de calidad|<P2>|10774-TituloOptimización de rendimiento y aseguramiento de inocuidad en la industria de quesería; una guía para la pequeña y mediana empresa|<P3>|10775-TituloProducción higiénica de la leche cruda; una guía para la pequeña y mediana empresa|<P4>|10783-TituloMoral para intelectuales|<P5>"];
+Nodo26694984:P0 -> Nodo2935151;
+Nodo32114169[label="<P0>|10840-TituloConstitución pastoral Gaudium et spes, sobre la Iglesia en el mundo actual|<P1>|10842-TituloIntroducción a la ética|<P2>|10844-TituloEl ocaso de un régimen|<P3>|10846-TituloEducación política nacional|<P4>|10847-TituloDe hombres sociales y movimientos políticos / C. Wright Mills.|<P5>"];
+Nodo26694984:P1 -> Nodo32114169;
+Nodo27671684[label="<P0>|10927-TituloEvaluación de impacto en formación empresarial ; el caso FUNDES|<P1>|10928-TituloCómo resolver el problema de falta de tiempo|<P2>|10930-TituloPsicología aplicada a la enseñanza|<P3>|10932-TituloPan Am: an airline and its aircraft|<P4>|10933-TituloLa Mujer de pelo largo / Leonor Paz y Paz G.|<P5>|10934-TituloEl libro de la piedad y de la muerte|<P6>"];
+Nodo26694984:P2 -> Nodo27671684;
 
 
 }

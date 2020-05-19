@@ -3,13 +3,6 @@ digraph G{
 		   subgraph cluster_0 { 
 			color = 	azure2;
 	node[shape=Msquare  color = darkslategray text=white gradientangle=90];
-nodo1822836715[label = "  Biografia"];nodo1822836715->nodo1041714513
-nodo1041714513[label = "  Consulta"];nodo1041714513->nodo1889975426
-nodo1889975426[label = "  Drama"];nodo1889975426->nodo1912453146
-nodo1912453146[label = "  Ensayo"];nodo1912453146->nodo792342737
-nodo792342737[label = "  Informativos"];nodo792342737->nodo734236066
-nodo734236066[label = "  Literatura"];nodo734236066->nodo1849980660
-nodo1849980660[label = "  Lírico"];nodo1849980660->nodo1927622222
-nodo1927622222[label = "  Revista"];nodo1927622222->nodo212284539
-nodo212284539[label = "  Sagas"];nodo212284539->nodo1002309328
-nodo1002309328[label = "  Épico"];}}
+nodo725634887[label = "  t"];nodo725634887->nodo372084706
+nodo372084706[label = "  s"];nodo372084706->nodo198215143
+nodo198215143[label = "  t"];}}

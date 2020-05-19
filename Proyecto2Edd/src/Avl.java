@@ -79,7 +79,7 @@ public class Avl implements Serializable {
 
     void Insertar(String as ,String A) {
 
-    Raiz=   Agregar(Raiz, as,A);
+ Raiz=INSERT(Raiz, as, A);
      
           
     }
@@ -309,6 +309,103 @@ public NodoAvl Buscar(String aux){
       
       return  alv;
     }
+
+NodoAvl Delete(NodoAvl raiz, String key) {
+
+        if (raiz == null) {
+            return raiz;  
+        }
+        else if (raiz!=null) {
+        
+        if (raiz.getKey().compareTo(key) > 0) {
+            raiz.left=Delete(raiz.left, key);
+
+        } else if (raiz.getKey().compareTo(key) < 0) {
+             raiz.right=Delete(raiz.right, key);
+        
+        }
+            }
+     else {
+      
+            if ((raiz.left == null) || (raiz.right == null)) {
+       
+                NodoAvl temporal = null;
+                if (temporal == raiz.left) {
+                    temporal = raiz.right;
+                } else {
+                    temporal = raiz.left;
+                }
+
+ 
+                if (temporal == null) {
+                    temporal = raiz;
+                    raiz = null;
+                } else {
+
+                    raiz = temporal;
+                }
+              
+            } else {
+
+                NodoAvl temporal = Min(raiz.right);
+
+                raiz.setKey(temporal.getKey()); 
+                raiz.right =Delete(raiz.right, temporal.getKey());
+
+            }
+
+        }
+
+        if (raiz == null) {
+            return raiz; 
+        }
+   
+       raiz.setAltura(Mayor(altura(raiz.left), altura(raiz.right )+1));
+        int balance = balance(raiz); 
+
+       
+        if (balance < -1 && balance(raiz.left) <= 0) {
+          
+            return RootDer(raiz);
+        }
+
+
+        if (balance > 1 && balance(raiz.right) >= 0) {
+      
+            return RootIzq(raiz);
+        }
+
+     
+        if (balance < -1 && balance(raiz.left) > 0) {
+            
+            raiz.left=(RootIzq(raiz.left));
+            return RootDer(raiz);
+        }
+
+        // DER IZQ
+        if (balance > 1 && balance(raiz.right) < 0) {
+            System.out.println("DER IZQ");
+            raiz.right=(RootDer(raiz.right));
+            return RootIzq(raiz);
+        }
+
+        return raiz;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public boolean Buscars(String aux){
       NodoAvl alv= Raiz;
       boolean a= false;
@@ -362,9 +459,79 @@ public NodoAvl Buscar(String aux){
       
       return  a;
     }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     public void insertar_avl(String key , String User) {
+        key = key.toLowerCase();
+       Raiz = INSERT(this.Raiz, key, User);
+    }
+
+    NodoAvl INSERT(NodoAvl alv, String key ,String User) {
+        if (alv == null) {
+            alv = new NodoAvl(key,User);
+        }
+        else if (alv!=null) {
+            
+        
+     
+        if (alv.getKey().compareTo(key) < 0) {
+            alv.right=(INSERT(alv.right, key,User));
+            
+
+        } else if (alv.getKey().compareTo(key) > 0) {
+            alv.left=(INSERT(alv.left, key,User));
+        } 
+            return alv;
+
+        
+    }
+        alv.setAltura(Mayor(altura(alv.right), altura(alv.left)) + 1);
+        int balance = balance(alv);
+
+        if (balance < -1 && key.compareTo(alv.left.getKey()) < 0) {
+
+            return RootDer(alv);
+        }
+
+        if (balance < -1 && key.compareTo(alv.left.getKey()) > 0) {
+
+            alv.left=(RootIzq(alv.left));
+            return RootDer(alv);
+        }
+
+
+        if (balance > 1 && key.compareTo(alv.right.getKey()) > 0) {
+
+            return RootIzq(alv);
+        }
+
+      
+        if (balance > 1 && key.compareTo(alv.right.getKey()) < 0) {
+            alv.right=(RootDer(alv.right));
+            return RootIzq(alv);
+        }
+
+        return alv;
+    }
+     
+     
+     
+     
+     
 void Eliminar(String alv){
 
-    Raiz= Borrar(Raiz, alv);
+    Raiz= Delete(Raiz, alv);
     Preorden(Raiz);
 }
     NodoAvl Borrar(NodoAvl alv, String key) {

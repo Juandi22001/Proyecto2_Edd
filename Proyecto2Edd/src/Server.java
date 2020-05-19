@@ -1,19 +1,18 @@
 
-import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
-import java.io.IOException;
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 import java.awt.Desktop;
+import java.awt.HeadlessException;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
+import java.io.FileInputStream;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -26,11 +25,12 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
-import javax.swing.JButton;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -117,6 +117,9 @@ Avl alv= new Avl();
         jButton13 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jTextField15 = new javax.swing.JTextField();
+        jButton16 = new javax.swing.JButton();
+        jTextField16 = new javax.swing.JTextField();
 
         jButton12.setText("jButton12");
 
@@ -312,6 +315,13 @@ Avl alv= new Avl();
         });
         jScrollPane1.setViewportView(jList1);
 
+        jButton16.setText("ver");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -410,20 +420,6 @@ Avl alv= new Avl();
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(325, 325, 325)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(199, 199, 199)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(62, 62, 62)
-                                .addComponent(jLabel3)))
-                        .addGap(67, 67, 67)
-                        .addComponent(jButton5))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jLabel8))
                     .addGroup(layout.createSequentialGroup()
@@ -463,8 +459,30 @@ Avl alv= new Avl();
                                 .addGap(104, 104, 104)
                                 .addComponent(jLabel17)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton13)))))
+                                .addComponent(jButton13))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(199, 199, 199)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(62, 62, 62)
+                                .addComponent(jLabel3)))
+                        .addGap(208, 208, 208)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton5)))))
                 .addGap(95, 562, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(111, 111, 111))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -529,6 +547,10 @@ Avl alv= new Avl();
                                 .addGap(105, 105, 105))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton16))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -571,11 +593,15 @@ Avl alv= new Avl();
                 .addComponent(jTextField8)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(11, 11, 11)
-                        .addComponent(jLabel2)))
+                        .addComponent(jLabel2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5))
+                        .addGap(4, 4, 4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -591,8 +617,8 @@ Avl alv= new Avl();
   JSONParser parser = new JSONParser();
 
         try {
-
-            Object obj = parser.parse(new FileReader("C:\\Users\\JUAN DIEGO ALVARADO\\Desktop\\CargaLibros.json"));
+JSONObject obj = (JSONObject) parser.parse(new InputStreamReader(new FileInputStream("C:\\Users\\JUAN DIEGO ALVARADO\\Desktop\\CargaLibros.json"), "UTF-8"));
+        
 
             JSONObject jsonObject = (JSONObject) obj;
 
@@ -622,7 +648,7 @@ Avl alv= new Avl();
                     
                 } else {
                     
-                    Listas.alv.Insertar(Categoria,log.user);
+                    Listas.alv.Insertar(Categoria,Login.user);
                            
               Listas.alv.Buscar(Categoria).arbol.insert(new LlaveEntero(ISBN),"");
       
@@ -687,7 +713,7 @@ Avl alv= new Avl();
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        Listas.alv.Insertar("j",log.user);
+        Listas.alv.Insertar("j",Login.user);
 
 
 
@@ -711,17 +737,17 @@ Listas.alv.Ver();        // TODO add your handling code here:
     }//GEN-LAST:event_button1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-Listas.alv.Insertar(jTextField3.getText(),log.user);        // TODO add your handling code here:
+Listas.alv.Insertar(jTextField3.getText(),Login.user);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-        if (log.user.equals(jTextField13.getText())) {
+        if (Login.user.equals(jTextField16.getText())) {
             
         }
-        System.out.println("letra a eliminar"+jTextField3.getText());
+        System.out.println("letra a eliminar"+jTextField16.getText());
         
-        Listas.alv.Eliminar(jTextField1.getText());        // TODO add your handling code here:
+      alv.Eliminar(jTextField16.getText());        // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -778,7 +804,7 @@ int carne= Integer.parseInt(jTextField7.getText());
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if (log.user.equals(jTextField1.getText())) {
+        if (Login.user.equals(jTextField1.getText())) {
             Listas.H.Eliminar(jTextField1.getText());
         }
 
@@ -790,7 +816,7 @@ int carne= Integer.parseInt(jTextField7.getText());
     }//GEN-LAST:event_jTextField12ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        if (Listas.alv.Buscars2(jTextField13.getText(), log.user)==true) {
+        if (Listas.alv.Buscars2(jTextField13.getText(), Login.user)==true) {
            ArbolB a = new ArbolB(5);
             Listas.alv.Buscar(jTextField13.getText()).arbol=a;
      Listas.listaAux.EliminarIsbn(Integer.parseInt(jTextField2.getText()));
@@ -844,7 +870,7 @@ Listas.alv.Buscars(Categoria)==true) {
                     
                 } else {
                     
-                    Listas.alv.Insertar(Categoria,log.user);
+                    Listas.alv.Insertar(Categoria,Login.user);
                            
               Listas.alv.Buscar(Categoria).arbol.insert(new LlaveEntero(ISBN2),"");
               
@@ -862,7 +888,7 @@ Listas.H.Editar(jTextField1.getText());        // TODO add your handling code he
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-       if (Listas.alv.Buscars2(jTextField13.getText(), log.user)==true) {
+       if (Listas.alv.Buscars2(jTextField13.getText(), Login.user)==true) {
            ArbolB a = new ArbolB(5);
             Listas.alv.Buscar(jTextField13.getText()).arbol=a;
      Listas.listaAux.EliminarNombre(jTextField10.getText());
@@ -933,6 +959,7 @@ jLabel9.setText(ayuda);             // TODO add your handling code here:
      NodoListaAux alv= Listas.listaAux.Inicio;
      
      while      (alv!=null){
+  
          modelo.addElement(alv.getCategoria());
         alv=alv.sig;
      }
@@ -940,12 +967,19 @@ jLabel9.setText(ayuda);             // TODO add your handling code here:
      jList1.setModel(modelo);
      
      
-        String a = jList1.getSelectedValue().toString();
-       
-        System.out.println("opcion j list"+" "+a);
+     
+     
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+jTextField15.setText(jList1.getSelectedValue());
+        Listas.alv.Buscar(jTextField15.getText()).arbol.Graficar();
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
 
       private void ToDotGenerator(String cadena) {
 
@@ -955,10 +989,10 @@ jLabel9.setText(ayuda);             // TODO add your handling code here:
             f = new File("Todot" + ".txt");
             wr = new FileWriter(f);
             BufferedWriter bw = new BufferedWriter(wr);
-            PrintWriter salida = new PrintWriter(bw);
-            salida.write(cadena + "\n");
-            salida.close();
-        } catch (Exception e) {
+            try (PrintWriter salida = new PrintWriter(bw)) {
+                salida.write(cadena + "\n");
+            }
+        } catch (IOException e) {
             JOptionPane.showMessageDialog(null, " no es posible escribir");
         }
         try {
@@ -967,14 +1001,14 @@ jLabel9.setText(ayuda);             // TODO add your handling code here:
             pbuilder.redirectErrorStream(true);
             pbuilder.start();
             JOptionPane.showMessageDialog(null, "reporte Generado con exitoooo");
-        } catch (Exception e) {
+        } catch (HeadlessException | IOException e) {
             JOptionPane.showMessageDialog(null, "La imagen no se genero correctamente");
         }
 
         File miArchivo = new File("Todot" + ".png");
         try {
             Desktop.getDesktop().open(miArchivo);
-        } catch (Exception e) {
+        } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "no se encuentra la ruta de la imagen"
                     + "");
         }
@@ -994,7 +1028,7 @@ jLabel9.setText(ayuda);             // TODO add your handling code here:
               data =bos.toByteArray();
               
           }
-          catch(Exception e){
+          catch(IOException e){
               
               System.out.println(e);
           }
@@ -1085,17 +1119,8 @@ jLabel9.setText(ayuda);             // TODO add your handling code here:
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() { 
-                
-      
-                
-                
-             
-        new Server().setVisible(true);
-           
-            }
-            
+        java.awt.EventQueue.invokeLater(() -> {
+            new Server().setVisible(true);
         });
     }
 
@@ -1108,6 +1133,7 @@ jLabel9.setText(ayuda);             // TODO add your handling code here:
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1143,6 +1169,8 @@ jLabel9.setText(ayuda);             // TODO add your handling code here:
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;

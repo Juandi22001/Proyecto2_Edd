@@ -1,0 +1,18 @@
+digraph G{ 
+
+		   subgraph cluster_0 { 
+			color = 	azure2;
+	node[shape=Msquare  color = darkslategray text=white gradientangle=90];
+Nodo19329520[label = "  Ricardo-201503476"];
+Nodo19329520[label = "  Ricardo-201503476"];
+Nodo19329520->Nodo30335857
+Nodo30335857[label = "  Juanito-201503476"];
+Nodo30335857->Nodo30016572
+Nodo30016572[label = "  Lucas-201503476"];
+Nodo12710642[label = "  Juanito-201503477"];
+Nodo4601771[label = "  Juan-201807335"];
+Nodo4601771[label = "  Juan-201807335"];
+Nodo4601771->Nodo3379641
+Nodo3379641[label = "  Amilcar-201807335"];
+Nodo30249575[label = "  Antonio-202005878"];
+}}
