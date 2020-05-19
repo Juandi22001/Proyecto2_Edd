@@ -128,7 +128,7 @@ void ver(){
            void EliminarNombre(String Nombre){
               NodoListaAux aux= Inicio;
               while (aux!=null){
-                  if (Nombre.equals(aux.getNombre())) {
+                  if (Nombre.equals(aux.getTitulo())) {
              
                              System.out.println("encontrado");
                 

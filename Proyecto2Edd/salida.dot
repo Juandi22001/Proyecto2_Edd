@@ -1,7 +1,11 @@
 digraph ArbolB{
 
 node[shape=record];
-Nodo1364935737[label="<P0>|10826-Usuario|<P1>|10827-Usuario|<P2>|10828-Usuario|<P3>"];
+Nodo779237240[label="<P0>|10831-Usuario|<P1>"];
+Nodo25761027[label="<P0>|10763-Usuario|<P1>|10765-Usuario|<P2>|10768-Usuario|<P3>|10770-Usuario|<P4>|10830-Usuario|<P5>"];
+Nodo779237240:P0 -> Nodo25761027;
+Nodo319813103[label="<P0>|10838-Usuario|<P1>|10839-Usuario|<P2>|10907-Usuario|<P3>|10910-Usuario|<P4>|10912-Usuario|<P5>|10916-Usuario|<P6>"];
+Nodo779237240:P1 -> Nodo319813103;
 
 
 }
