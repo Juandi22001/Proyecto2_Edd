@@ -1,0 +1,18 @@
+digraph G{ 
+
+		   subgraph cluster_0 { 
+			color = 	azure2;
+	node[shape=Msquare  color = darkslategray text=white gradientangle=90];
+Consulta->Biografia
+Consulta->Informativos
+Informativos->Literatura
+Literatura->Lírico
+Lírico->Épico
+Consulta->Informativos
+Consulta->Biografia
+Informativos->Literatura
+Informativos->Ensayo
+Ensayo->Drama
+Literatura->Lírico
+Lírico->Épico
+}}

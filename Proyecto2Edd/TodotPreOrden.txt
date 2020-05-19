@@ -1,0 +1,15 @@
+digraph G{ 
+
+		   subgraph cluster_0 { 
+			color = 	azure2;
+	node[shape=Msquare  color = darkslategray text=white gradientangle=90];
+nodo80153316[label = "  Consulta"];nodo80153316->nodo1435031959
+nodo1435031959[label = "  Biografia"];nodo1435031959->nodo1581450186
+nodo1581450186[label = "  Informativos"];nodo1581450186->nodo288559708
+nodo288559708[label = "  Ensayo"];nodo288559708->nodo757050036
+nodo757050036[label = "  Drama"];nodo757050036->nodo1044945633
+nodo1044945633[label = "  Literatura"];nodo1044945633->nodo2018739121
+nodo2018739121[label = "  Lírico"];nodo2018739121->nodo1903939349
+nodo1903939349[label = "  Épico"];nodo1903939349->nodo560038276
+nodo560038276[label = "  Revista"];nodo560038276->nodo1527023835
+nodo1527023835[label = "  Sagas"];}}
