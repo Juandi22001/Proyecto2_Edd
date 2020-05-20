@@ -1,4 +1,5 @@
 
+import com.sun.prism.Texture;
 import java.io.Serializable;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
@@ -14,124 +15,129 @@ import javax.swing.JOptionPane;
  */
 public class Hash  implements  Serializable{
 
-    public NodoHash[] arreglo;
-    int size, alv;
+    public static  NodoHash[] arreglo;
+   public static int size, alv;
 public Hash(){
     
     
 }
     public Hash(int tam) {
 
-        this.size = tam;
+        Hash.size = tam;
         arreglo = new NodoHash[tam];
+NodoHash aux= new NodoHash();
+aux.setApellido("s");
+aux.setCarne(22);
+aux.setCarrera("efe");
 
+        Arrays.fill(arreglo, (null));
     }
 
-    void functionHash(int carne, String Nombre, String Apellido, String password, String Carrera, NodoHash[] Nodos) {
+    public static void functionHash(int carne, String Nombre, String Apellido, String password, String Carrera, NodoHash[] Nodos) {
         ListaHash Lista = new ListaHash();
        
-        NodoHash Fin=null;
+       NodoHash AUX=new  NodoHash();
+        AUX.setApellido(Apellido);
+        AUX.setCarne(carne);
+        AUX.setCarrera(Carrera);
+        AUX.setNombre(Nombre);
+        AUX.setPassword(password);
         Lista.Agregar(carne, Nombre, Apellido, password, Carrera);
         int indice = carne % 45;
         System.out.println("el indice es" + indice);
 
         if (Nodos[indice] != null) {
- NodoHash Inicio=Nodos[indice];
- NodoHash Final=Nodos[indice];
-            
+            System.out.println(Nodos[indice].getNombre());
  System.out.println("colision");
-            if (Inicio.siguiente == null) {
+    if (Nodos[indice].siguiente == null) {
                
            
-                System.out.println("agregando");
-          Inicio.siguiente=Nodos[indice].siguiente;
-               Nodos[indice].siguiente = Lista.Inicio;
-                   Inicio=Nodos[indice].siguiente;
-              Inicio = Lista.Inicio;
+               Nodos[indice].siguiente = AUX;
+               
                 
             }    
             
-            else if (Inicio.siguiente.siguiente==null) {
+            else if (Nodos[indice].siguiente.siguiente==null) {
                
-         Inicio.siguiente.siguiente=Lista.Inicio;
+         Nodos[indice].siguiente.siguiente=AUX;
                 
                 System.out.println("siuuuu");
             }
-               else if (Inicio.siguiente.siguiente.siguiente==null) {
+               else if (Nodos[indice].siguiente.siguiente.siguiente==null) {
                
-         Inicio.siguiente.siguiente.siguiente=Lista.Inicio;
-                
-                System.out.println("siuuuu");
-            }
-            
-             else if (Inicio.siguiente.siguiente.siguiente.siguiente==null) {
-               
-         Inicio.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
-                
-                System.out.println("siuuuu");
-            }
-              else if (Inicio.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
-               
-         Inicio.siguiente.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
-                
-                System.out.println("siuuuu");
-            }
-                          else if (Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
-               
-         Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
-                
-                System.out.println("siuuuu");
-            }
-                          else if (Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
-               
-         Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
+         Nodos[indice].siguiente.siguiente.siguiente=AUX;
                 
                 System.out.println("siuuuu");
             }
             
-                          else if (Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+             else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente==null) {
                
-         Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente=AUX;
+                
+                System.out.println("siuuuu");
+            }
+              else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+               
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente=AUX;
+                
+                System.out.println("siuuuu");
+            }
+                          else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+               
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=AUX;
+                
+                System.out.println("siuuuu");
+            }
+                          else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+               
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=AUX;
                 
                 System.out.println("siuuuu");
             }
             
-                          else if (Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+                          else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
                
-         Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=AUX;
                 
                 System.out.println("siuuuu");
             }
             
-                          else if (Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+                          else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
                
-         Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=AUX;
+                
+                System.out.println("siuuuu");
+            }
+            
+                          else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+               
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=AUX;
                 
                 System.out.println("siuuuu");
             }            
             
             
-                          else if (Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+                          else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
                            
             
-         Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=AUX;
                 
                 System.out.println("siuuuu");
             }
 
             
-                          else if (Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+                          else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
                            
             
-         Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=AUX;
                 
                 System.out.println("siuuuu");
             }
 
-                          else if (Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
+                          else if (Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente==null) {
                            
             
-         Inicio.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=Lista.Inicio;
+         Nodos[indice].siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente=AUX;
                 
                 System.out.println("siuuuu");
             }
@@ -139,17 +145,24 @@ public Hash(){
             
             
             
-            
-            
+    
             
 
-        } else {
-            Nodos[indice] = Lista.Inicio;
+        } else if (Nodos[indice]==null){
+            
+            Nodos[indice] = AUX;
+        
+             System.out.println(Nodos[indice].getNombre());
+            
         }
 
     }
 
-    String Mostrar() {
+    /**
+     *
+     * @return
+     */
+    public static String Mostrar() {
         String grafo = "";
 
         grafo += "digraph G{ \n"
@@ -190,27 +203,46 @@ public Hash(){
 
     }
 
-    boolean Buscar(String alv, String alv2) {
+    /**
+     *
+     * @param alv
+     * @param alv2
+     * @return
+     */
+    public static boolean Buscar(String alv, String alv2) {
         boolean a = false;
         for (int i = 0; i < arreglo.length; i++) {
 
             if (arreglo[i] != null) {
 
-                if (arreglo[i].getNombre().equals(alv) && arreglo[i].getPassword().equals(alv2)) {
+                if (alv.equals(arreglo[i].getNombre()) && alv.equals(arreglo[i].getNombre())) {
   
             System.out.println("siuuuuuuuuuuuuuuuuuuuuu");     return true;
                 }
-                else  if (arreglo[i].siguiente != null) {
-                    while (arreglo[i] != null) {
-
-                        if (arreglo[i].getNombre().equals(alv) && arreglo[i].getPassword().equals(alv2)) {
-                       }
-                    }
-                    arreglo[i] = arreglo[i].siguiente;
-
+                System.out.println("usuariooo"+arreglo[i].getNombre());
+        if (    arreglo[i].siguiente!=null) {
+                    
+                    
+                    while (arreglo[i]!=null) {
+                     
+                        if (arreglo[i].siguiente!=null) {
+                            
+                             if (alv.equals(arreglo[i].getNombre()) && alv.equals(arreglo[i].getNombre())) {
+  
+            System.out.println("siuuuuuuuuuuuuuuuuuuuuu");     return true;
                 }
-
-            }
+                            
+                        }
+                        
+                        
+                      arreglo[i]=  arreglo[i].siguiente;
+                    }
+                    
+                }
+              }
+            
+            
+          
 
         }
 
@@ -229,25 +261,31 @@ void Eliminar (String alv) {
 
             if (arreglo[i] != null) {
 
-                if (arreglo[i].getNombre().equals(alv) ) {
+                if (alv.equals(arreglo[i].getNombre()) ) {
   
                   arreglo[i]=null;
+       
                 }
-                else  if (arreglo[i].siguiente != null) {
+                     if (arreglo[i].siguiente != null) {
                     while (arreglo[i] != null) {
 
-                        if (arreglo[i].getNombre().equals(alv) ) {
+                        if (alv.equals(arreglo[i].getNombre()) ) {
                        
-                           arreglo[i].siguiente=null;
+                            if (arreglo[i].siguiente==null) {
+                                arreglo[i]=null;
+                            }
+                            else  if(alv.equals(arreglo[i].siguiente.getNombre())) {
+                               NodoHash hasha=  arreglo[i].siguiente.siguiente;                                
+                               arreglo[i].setSiguiente(hasha);
                             
-                          
+                            }
                             
-                        
                         }
-                    }
-                    arreglo[i] = arreglo[i].siguiente;
+                    arreglo[i] = arreglo[i].siguiente; }
+                   
 
                 }
+             
 
             }
 

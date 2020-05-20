@@ -111,7 +111,7 @@ void ver(){
                     
                     
                 }
-                else{            System.out.println("encontrado3");              
+                else if (aux.sig!=null){            System.out.println("encontrado3");              
                     
                     aux.sig.ant=aux.ant;
                     aux.ant.sig=aux.sig;

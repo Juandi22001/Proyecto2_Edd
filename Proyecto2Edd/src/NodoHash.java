@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class NodoHash  implements  Serializable {
 
     //hola
-  public  NodoHash siguiente;
+public NodoHash siguiente;
     private int carne;
     private String Nombre;
     private String Apellido;
@@ -22,6 +22,7 @@ public class NodoHash  implements  Serializable {
     private String Password;
 
     public NodoHash() {
+        siguiente=null;
     }
 
     public NodoHash(int carne, String Nombre, String Apellido, String Carrera, String Password) {
