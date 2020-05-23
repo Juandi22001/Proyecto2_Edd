@@ -845,7 +845,7 @@ int carne= Integer.parseInt(jTextField7.getText());
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         if (Listas.alv.Buscars2(jTextField13.getText(), Login.user)==true) {
-           ArbolB a = new ArbolB(4);
+           ArbolB a = new ArbolB(2);
             Listas.alv.Buscar(jTextField13.getText()).arbol=a;
      Listas.listaAux.EliminarIsbn(Integer.parseInt(jTextField2.getText()));
      String aux="";
@@ -919,7 +919,7 @@ Listas.H.Editar(jTextField1.getText());
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
        if (Listas.alv.Buscars2(jTextField13.getText(), Login.user)==true) {
-           ArbolB a = new ArbolB(4);
+           ArbolB a = new ArbolB(2);
             Listas.alv.Buscar(jTextField13.getText()).arbol=a;
      Listas.listaAux.EliminarNombre(jTextField10.getText());
      

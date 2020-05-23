@@ -1,11 +1,11 @@
 digraph ArbolB{
 
-node[shape=record  color = darkslategray text=white gradientangle=90];
-Nodo960345687[label="<P0>|10830-TituloRelación de la vida y virtudes del beato Hno. Pedro de San José de Betancurt|<P1>"];
-Nodo1947428208[label="<P0>|10763-TituloCurso de derecho constitucional|<P1>|10765-TituloCanales de comercialización|<P2>|10768-TituloPlaneación estratégica aplicada|<P3>|10770-TituloMarketing|<P4>"];
-Nodo960345687:P0 -> Nodo1947428208;
-Nodo1155418126[label="<P0>|10831-TituloEl camino y la meta|<P1>|10838-TituloGestión de la calidad en pequeñas y medianas empresas; memoria del proyecto copatrocinado por OEA /GTZ, 1982-2000|<P2>|10839-TituloEl mapa; una guía para el mejoramiento de la calidad en la pequeña y mediana empresa, basada en el método de W. Edwards Deming|<P3>|10907-TituloLas ventas en el mundo actual|<P4>|10910-TituloProblemas y métodos de investigación en la historia de la filosofía|<P5>|10912-TituloLa Educación de los padres|<P6>|10916-TituloLa Odisea|<P7>"];
-Nodo960345687:P1 -> Nodo1155418126;
+node[shape=record color = darkslategray text=white gradientangle=90];
+Nodo2090854000[label="<P0>|123-Titulos|<P1>"];
+Nodo1120990204[label="<P0>|1-Titulos|<P1>|12-Titulos|<P2>"];
+Nodo2090854000:P0 -> Nodo1120990204;
+Nodo2113205537[label="<P0>|1234-Titulos|<P1>|12345-Titulos|<P2>"];
+Nodo2090854000:P1 -> Nodo2113205537;
 
 
 }

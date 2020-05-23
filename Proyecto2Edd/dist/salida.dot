@@ -1,11 +1,11 @@
 digraph ArbolB{
 
-node[shape=record];
-Nodo22319976[label="<P0>|10831-TituloEl camino y la meta|<P1>"];
-Nodo29800575[label="<P0>|10763-TituloCurso de derecho constitucional|<P1>|10765-TituloCanales de comercialización|<P2>|10768-TituloPlaneación estratégica aplicada|<P3>|10770-TituloMarketing|<P4>|10830-TituloRelación de la vida y virtudes del beato Hno. Pedro de San José de Betancurt|<P5>"];
-Nodo22319976:P0 -> Nodo29800575;
-Nodo12505925[label="<P0>|10838-TituloGestión de la calidad en pequeñas y medianas empresas; memoria del proyecto copatrocinado por OEA /GTZ, 1982-2000|<P1>|10839-TituloEl mapa; una guía para el mejoramiento de la calidad en la pequeña y mediana empresa, basada en el método de W. Edwards Deming|<P2>|10907-TituloLas ventas en el mundo actual|<P3>|10910-TituloProblemas y métodos de investigación en la historia de la filosofía|<P4>|10912-TituloLa Educación de los padres|<P5>|10916-TituloLa Odisea|<P6>"];
-Nodo22319976:P1 -> Nodo12505925;
+node[shape=record  color = darkslategray text=white gradientangle=90];
+Nodo29257045[label="<P0>|10830-TituloRelación de la vida y virtudes del beato Hno. Pedro de San José de Betancurt|<P1>"];
+Nodo9237350[label="<P0>|10763-TituloCurso de derecho constitucional|<P1>|10765-TituloCanales de comercialización|<P2>|10768-TituloPlaneación estratégica aplicada|<P3>|10770-TituloMarketing|<P4>"];
+Nodo29257045:P0 -> Nodo9237350;
+Nodo11246459[label="<P0>|10831-TituloEl camino y la meta|<P1>|10838-TituloGestión de la calidad en pequeñas y medianas empresas; memoria del proyecto copatrocinado por OEA /GTZ, 1982-2000|<P2>|10839-TituloEl mapa; una guía para el mejoramiento de la calidad en la pequeña y mediana empresa, basada en el método de W. Edwards Deming|<P3>|10907-TituloLas ventas en el mundo actual|<P4>|10910-TituloProblemas y métodos de investigación en la historia de la filosofía|<P5>|10912-TituloLa Educación de los padres|<P6>|10916-TituloLa Odisea|<P7>"];
+Nodo29257045:P1 -> Nodo11246459;
 
 
 }

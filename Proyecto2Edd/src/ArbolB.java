@@ -111,7 +111,7 @@ public class ArbolB {
             node.mPunteros[i + 2] = splitted.mPuntero;
         node.mB++;
 
-        if (node.mB > 2 * mK) {
+        if (node.mB > 2* mK) {
 
             Nodo newnode = new Nodo(this.mK);
             newnode.mPunteros[this.mK] = node.mPunteros[node.mB];
@@ -183,7 +183,7 @@ public void Eliminar(){
             PrintStream ps = new PrintStream(file);
             ps.println("digraph ArbolB{");
             ps.println();
-            ps.println("node[shape=record  color = darkslategray text=white gradientangle=90];");
+            ps.println("node[shape=record color = darkslategray text=white gradientangle=90];");
             ps.println(mRaiz.toDot());
             ps.println();
             ps.print("}");

@@ -14,6 +14,10 @@ public class LlaveEntero extends Ordenable {
 
     private Integer mLlave = null;
 
+    /**
+     *
+     * @param pValor
+     */
     public LlaveEntero(int pValor) {
         mLlave = new Integer(pValor);
     }

@@ -11,7 +11,7 @@
 public class NodoAvl {
 public String key;
 public NodoAvl right;
-public ArbolB arbol = new ArbolB(4);
+public ArbolB arbol = new ArbolB(2);
 public NodoAvl left;
 private String Usario;
 
