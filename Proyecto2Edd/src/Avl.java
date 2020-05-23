@@ -72,11 +72,21 @@ public class Avl implements Serializable {
             return 0;
 
         }
+        else{
         
+        return altura(alv.right) - altura(alv.left);
+        }
         
-        return altura(alv.left) - altura(alv.right);
+        }
+/*
+    int getBalance(NodoAvl raiz_temp) {
+        if (raiz_temp == null) {
+            return 0;
+        } else {
+            return getHeight(raiz_temp.getDer()) - getHeight(raiz_temp.getIzq());
+        }
     }
-
+    */
     void Insertar(String as ,String A) {
 
  Raiz=INSERT(Raiz, as, A);

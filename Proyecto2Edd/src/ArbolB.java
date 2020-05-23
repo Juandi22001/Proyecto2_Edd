@@ -183,7 +183,7 @@ public void Eliminar(){
             PrintStream ps = new PrintStream(file);
             ps.println("digraph ArbolB{");
             ps.println();
-            ps.println("node[shape=record];");
+            ps.println("node[shape=record  color = darkslategray text=white gradientangle=90];");
             ps.println(mRaiz.toDot());
             ps.println();
             ps.print("}");

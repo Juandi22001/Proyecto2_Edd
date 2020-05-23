@@ -3,6 +3,5 @@ digraph G{
 		   subgraph cluster_0 { 
 			color = 	azure2;
 	node[shape=Msquare  color = darkslategray text=white gradientangle=90];
-nodo1855954190[label = "  t"];nodo1855954190->nodo1148958168
-nodo1148958168[label = "  t"];nodo1148958168->nodo25973415
-nodo25973415[label = "  s"];}}
+nodo1732933691[label = "  h"];nodo1732933691->nodo1467036607
+nodo1467036607[label = "  g"];}}
